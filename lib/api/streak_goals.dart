@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:accountability_mobile_app/types/streak_goal.dart';
 
 Future<StreakGoal> fetchCodeStreakGoal() async {
-  final response = await http.get(Uri.parse(
-      'http://127.0.0.1:8000/DayStreakGoals/LootDwMECk7rtEayeKLbV9/'));
+  const streakGoalId = '5ujpQb6LqB8FcBBs9Gbkuj';
+  final response = await http.get(Uri.parse('http://127.0.0.1:8000/day-streak-goals/${streakGoalId}/'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
