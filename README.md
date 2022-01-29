@@ -1,8 +1,20 @@
 # accountability_mobile_app
 
-A new Flutter project.
+Solvestack's accountability mobile app.
+We're here so you can stay engaged in your software engineering learning!
 
-## Getting Started
+## Running
+
+\# TODO: Flutter Installation
+
+
+```bash
+flutter devices
+flutter run
+```
+
+
+## Resources
 
 This project is a starting point for a Flutter application.
 
