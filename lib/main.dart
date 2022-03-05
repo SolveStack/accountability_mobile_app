@@ -51,12 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          leading: SvgPicture.asset(
-            logo,
-            color: Colors.black,
-            width: 56,
-            height: 56,
-          ),
+          // leading: SvgPicture.asset(
+          //   logo,
+          //   color: Colors.black,
+          //   width: 56,
+          //   height: 56,
+          // ),
           // FittedBox(
           //   fit: BoxFit.contain,
           //   child: SvgPicture.asset(logo, color: Colors.teal.shade100, semanticsLabel: 'solvestack logo'),
