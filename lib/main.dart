@@ -35,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late Future<StreakGoal> codeStreakGoal;
   final String logo = 'solvestack.svg';
+  String _listKey;
 
   @override
   void initState() {
@@ -51,32 +52,40 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          leading: SvgPicture.asset(
-            logo,
-            color: Colors.black,
-            width: 56,
-            height: 56,
-          ),
+          // leading: SvgPicture.asset(
+          //   logo,
+          //   color: Colors.black,
+          //   width: 56,
+          //   height: 56,
+          // ),
           // FittedBox(
           //   fit: BoxFit.contain,
           //   child: SvgPicture.asset(logo, color: Colors.teal.shade100, semanticsLabel: 'solvestack logo'),
           // ),
           title: const Text('Streak Goals'),
         ),
-        body: Center(
-          child: FutureBuilder<StreakGoal>(
-            future: codeStreakGoal,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return Text(snapshot.data!.name);
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              }
-              // By default, show a loading spinner.
-              return const CircularProgressIndicator();
-            },
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: AnimatedList(
+            key: _listKey,
+            initialItemCount: _list.length,
+            itemBuilder: _buildItem,
           ),
         ),
+        // Center(
+        //   child: FutureBuilder<StreakGoal>(
+        //     future: codeStreakGoal,
+        //     builder: (context, snapshot) {
+        //       if (snapshot.hasData) {
+        //         return Text(snapshot.data!.name);
+        //       } else if (snapshot.hasError) {
+        //         return Text('${snapshot.error}');
+        //       }
+        //       // By default, show a loading spinner.
+        //       return const CircularProgressIndicator();
+        //     },
+        //   ),
+        // ),
       ),
     );
   }

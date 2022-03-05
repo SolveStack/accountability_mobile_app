@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:accountability_mobile_app/types/streak_goal.dart';
 
 Future<StreakGoal> fetchCodeStreakGoal() async {
-  const streakGoalId = '5ujpQb6LqB8FcBBs9Gbkuj';
+  const streakGoalId = 'MdsYkhtry6xwcpigupL3oB';
   final response = await http.get(Uri.parse('http://127.0.0.1:8000/day-streak-goals/${streakGoalId}/'));
 
   if (response.statusCode == 200) {
